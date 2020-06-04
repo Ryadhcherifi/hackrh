@@ -23,12 +23,13 @@ class CosDrawerWidget extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 8.0),
                   child: Container(
                     alignment: Alignment.center,
-                    height: screensize.height/10,
-                    width: screensize.width/5,
+                    height: screensize.height / 10,
+                    width: screensize.width / 5,
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius:BorderRadius.circular(30),),
-                      child: Text("OK"),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    child: Text("OK"),
                   ),
                 ),
               ),
@@ -40,12 +41,13 @@ class CosDrawerWidget extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 8.0),
                   child: Container(
                     alignment: Alignment.center,
-                    height: screensize.height/10,
-                    width: screensize.width/5,
+                    height: screensize.height / 10,
+                    width: screensize.width / 5,
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius:BorderRadius.circular(30),),
-                      child: Text("OK"),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    child: Text("OK"),
                   ),
                 ),
               ),
@@ -57,17 +59,15 @@ class CosDrawerWidget extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 8.0),
                   child: Container(
                     alignment: Alignment.center,
-                    height: screensize.height/10,
-                    width: screensize.width/5,
+                    height: screensize.height / 10,
+                    width: screensize.width / 5,
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius:BorderRadius.circular(30),),
-                      child: Text("OK"),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    child: Text("OK"),
                   ),
-                  
-                  
                 ),
-                
               ),
               Container(
                 decoration: BoxDecoration(
@@ -77,12 +77,13 @@ class CosDrawerWidget extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 8.0),
                   child: Container(
                     alignment: Alignment.center,
-                    height: screensize.height/10,
-                    width: screensize.width/5,
+                    height: screensize.height / 10,
+                    width: screensize.width / 5,
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius:BorderRadius.circular(30),),
-                      child: Text("OK"),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    child: Text("OK"),
                   ),
                 ),
               ),
