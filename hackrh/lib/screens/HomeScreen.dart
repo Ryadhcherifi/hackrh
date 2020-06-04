@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hackrh/widgets/Drawer.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -13,7 +14,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     Size screensize = MediaQuery.of(context).size;
     return Scaffold(
+
         backgroundColor: Color.fromRGBO(88, 88, 88, 1),
+        drawer: CosDrawerWidget(),
         body: Padding(
           padding: EdgeInsets.all(8.0),
           child: ListView(children: <Widget>[
