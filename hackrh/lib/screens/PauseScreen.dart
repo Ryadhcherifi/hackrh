@@ -12,7 +12,7 @@ class _PauseScreenState extends State<PauseScreen> {
   String _soustype = "chess games";
   String _init = "nabil";
   String _timetostart = "5min";
-  List <Widget> _userspause = [
+  List<Widget> _userspause = [
     UserProfile("Ryadh cherifi", 43 / 360, 230 / 360)
   ];
   @override
@@ -57,11 +57,12 @@ class _PauseScreenState extends State<PauseScreen> {
                               end: Alignment.bottomRight),
                           shape: BoxShape.circle,
                         ),
-                        height: screensize.width * (30 / 360),
-                        width: screensize.width * (30 / 360),
+                        height: screensize.width * (44 / 360),
+                        width: screensize.width * (44 / 360),
                         child: Icon(
                           Icons.add,
                           color: Colors.white,
+                          size: screensize.width * (30 / 360),
                         )),
                   ),
                 ],
@@ -107,13 +108,44 @@ class _PauseScreenState extends State<PauseScreen> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 5),
-                    height: screensize.width * (30 / 360),
+                    height: screensize.height * (231 / 640),
+                    margin: EdgeInsets.only(
+                      top: 10,
+                      left: screensize.width * (31 / 360),
+                    ),
                     child: ListView.builder(
-                      itemCount: 2,
+                      itemCount: 15,
                       itemBuilder: (context, pos) {
                         return _userspause[0];
                       },
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      margin: EdgeInsets.only(top: 20, bottom: 20),
+                      height: screensize.height * (43 / 640),
+                      width: screensize.width * (83 / 360),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Color.fromARGB(255, 17, 122, 227),
+                            Color.fromARGB(255, 15, 75, 136)
+                          ],
+                        ),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Join",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 21,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ),
                     ),
                   ),
                 ],

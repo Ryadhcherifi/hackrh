@@ -5,11 +5,10 @@ Widget ProfileAvatre(Size screensize, double largueur) {
     alignment: Alignment.bottomRight,
     children: <Widget>[
       Container(
-        color: Colors.white,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           border: Border.all(
-            color: Colors.blue,
+            color: Colors.white,
             width: 1,
           ),
         ),

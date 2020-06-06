@@ -21,7 +21,7 @@ class UserProfile extends StatelessWidget {
             child: ProfileAvatre(screensize, 15),
           ),
           Container(
-            margin: EdgeInsets.fromLTRB(8, 4, 0, 0),
+            margin: EdgeInsets.fromLTRB(15, 4, 0, 0),
             child: Text(
               _nom,
               style: TextStyle(
