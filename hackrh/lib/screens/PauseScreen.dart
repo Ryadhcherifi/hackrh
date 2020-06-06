@@ -12,7 +12,7 @@ class _PauseScreenState extends State<PauseScreen> {
   String _soustype = "chess games";
   String _init = "nabil";
   String _timetostart = "5min";
-  List<Widget> _userspause = [
+  List <Widget> _userspause = [
     UserProfile("Ryadh cherifi", 43 / 360, 230 / 360)
   ];
   @override

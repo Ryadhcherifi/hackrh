@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hackrh/screens/HomeScreen.dart';
+import 'package:hackrh/screens/PauseScreen.dart';
+import 'package:hackrh/screens/Pausepage.dart';
+import 'package:hackrh/screens/Taskpage.dart';
 
 void main() => runApp(MyApp());
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hackrh/widgets/AddTask.dart';
 import 'package:hackrh/widgets/Drawer.dart';
+import 'package:hackrh/widgets/TaskPriorityWidget.dart';
 import 'package:hackrh/widgets/TasksView.dart';
 
 class HomePage extends StatefulWidget {
