@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hackrh/widgets/AddTask.dart';
 import 'package:hackrh/widgets/Drawer.dart';
 import 'package:hackrh/widgets/TasksView.dart';
 
@@ -16,7 +17,7 @@ class _HomePageState extends State<HomePage> {
     Size screensize = MediaQuery.of(context).size;
     return Scaffold(
         backgroundColor: Color.fromRGBO(88, 88, 88, 1),
-        drawer: TasksView(),
+        drawer: AddTaskDia(),
         body: Padding(
           padding: EdgeInsets.all(8.0),
           child: Builder(
