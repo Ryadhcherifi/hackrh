@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hackrh/widgets/Drawer.dart';
+import 'package:hackrh/widgets/TasksView.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,7 +16,7 @@ class _HomePageState extends State<HomePage> {
     Size screensize = MediaQuery.of(context).size;
     return Scaffold(
         backgroundColor: Color.fromRGBO(88, 88, 88, 1),
-        drawer: CosDrawerWidget(),
+        drawer: TasksView(),
         body: Padding(
           padding: EdgeInsets.all(8.0),
           child: Builder(
