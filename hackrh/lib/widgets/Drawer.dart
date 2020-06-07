@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CosDrawerWidget extends StatelessWidget {
   @override
@@ -9,7 +10,8 @@ class CosDrawerWidget extends StatelessWidget {
         height: screensize.height / 1.3,
         width: screensize.width / 3.5,
         decoration: BoxDecoration(
-            color: Colors.blue, borderRadius: BorderRadius.circular(20)),
+            color: Color.fromRGBO(31, 118, 138, 1),
+            borderRadius: BorderRadius.circular(20)),
         child: Padding(
           padding: EdgeInsets.all(10),
           child: Column(
@@ -17,61 +19,67 @@ class CosDrawerWidget extends StatelessWidget {
             children: <Widget>[
               Container(
                 decoration: BoxDecoration(
-                    color: Colors.blue,
+                    color: Color.fromRGBO(31, 118, 138, 1),
                     border: Border(bottom: BorderSide(color: Colors.white))),
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 8.0),
-                  child: Container(
-                    alignment: Alignment.center,
-                    height: screensize.height / 10,
-                    width: screensize.width / 5,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(30),
+                  child: GestureDetector(
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: screensize.height / 10,
+                      width: screensize.width / 5,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Icon(FontAwesomeIcons.tasks),
                     ),
-                    child: Text("OK"),
                   ),
                 ),
               ),
               Container(
                 decoration: BoxDecoration(
-                    color: Colors.blue,
+                    color:Color.fromRGBO(31, 118, 138, 1),
                     border: Border(bottom: BorderSide(color: Colors.white))),
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 8.0),
-                  child: Container(
-                    alignment: Alignment.center,
-                    height: screensize.height / 10,
-                    width: screensize.width / 5,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(30),
+                  child: GestureDetector(
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: screensize.height / 10,
+                      width: screensize.width / 5,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Icon(FontAwesomeIcons.pause),
                     ),
-                    child: Text("OK"),
                   ),
                 ),
               ),
               Container(
                 decoration: BoxDecoration(
-                    color: Colors.blue,
+                    color: Color.fromRGBO(31, 118, 138, 1),
                     border: Border(bottom: BorderSide(color: Colors.white))),
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 8.0),
-                  child: Container(
-                    alignment: Alignment.center,
-                    height: screensize.height / 10,
-                    width: screensize.width / 5,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(30),
+                  child: GestureDetector(
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: screensize.height / 10,
+                      width: screensize.width / 5,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Icon(Icons.explore),
                     ),
-                    child: Text("OK"),
                   ),
                 ),
               ),
               Container(
                 decoration: BoxDecoration(
-                    color: Colors.blue,
+                    color: Color.fromRGBO(31, 118, 138, 1),
                     border: Border(bottom: BorderSide(color: Colors.white))),
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 8.0),
@@ -83,7 +91,7 @@ class CosDrawerWidget extends StatelessWidget {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(30),
                     ),
-                    child: Text("OK"),
+                    child: Icon(Icons.settings),
                   ),
                 ),
               ),

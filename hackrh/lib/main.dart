@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hackrh/screens/HomeScreen.dart';
 import 'package:hackrh/screens/PauseScreen.dart';
 import 'package:hackrh/screens/Pausepage.dart';
 import 'package:hackrh/screens/Taskpage.dart';
@@ -11,6 +10,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return MaterialApp(home: HomePage(), theme: ThemeData());
+    return MaterialApp(home: Taskpage(), theme: ThemeData());
   }
 }
