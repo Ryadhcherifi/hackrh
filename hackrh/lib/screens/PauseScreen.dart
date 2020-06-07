@@ -1,4 +1,6 @@
 import "package:flutter/material.dart";
+import 'package:hackrh/screens/PauseDetails.dart';
+import 'package:hackrh/widgets/AddPause.dart';
 import 'package:hackrh/widgets/FirstBar.dart';
 import 'package:hackrh/widgets/UserProfile.dart';
 
@@ -45,7 +47,9 @@ class _PauseScreenState extends State<PauseScreen> {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      addpause(context);
+                    },
                     child: Container(
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
@@ -156,4 +160,12 @@ class _PauseScreenState extends State<PauseScreen> {
       ),
     );
   }
+}
+
+void addpause(BuildContext context) {
+  showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return PauseDetails();
+      });
 }

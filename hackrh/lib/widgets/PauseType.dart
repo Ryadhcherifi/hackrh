@@ -23,7 +23,7 @@ class PauseType extends StatelessWidget {
           child: Center(
             child: Icon(
               icon,
-              color: selected ? first : second,
+              color: selected ? Colors.white : second,
               size: screensize.width * (20 / 360),
             ),
           ),
@@ -33,7 +33,7 @@ class PauseType extends StatelessWidget {
           child: Text(
             nom,
             style: TextStyle(
-              color: selected ? second : Colors.black,
+              color: selected ? second : first,
               fontSize: 14,
               fontWeight: FontWeight.w300,
             ),

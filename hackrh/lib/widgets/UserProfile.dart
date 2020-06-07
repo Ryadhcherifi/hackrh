@@ -6,6 +6,7 @@ class UserProfile extends StatelessWidget {
   double avatare;
   double row;
   UserProfile(this._nom, this.avatare, this.row);
+  static Color blueclair = Color(0xff8AD4E2);
   @override
   Widget build(BuildContext context) {
     Size screensize = MediaQuery.of(context).size;
@@ -25,9 +26,7 @@ class UserProfile extends StatelessWidget {
             child: Text(
               _nom,
               style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold),
+                  color: blueclair, fontSize: 14, fontWeight: FontWeight.w500),
             ),
           ),
         ],
