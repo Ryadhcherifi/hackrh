@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hackrh/widgets/DropDown.dart';
+import 'package:flutter_cupertino_date_picker/flutter_cupertino_date_picker.dart';
+
 
 class AddTaskDia extends StatefulWidget {
-  List<bool> checkList = [false, false, false];
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
@@ -12,44 +13,30 @@ class AddTaskDia extends StatefulWidget {
 }
 
 class _AddTask extends State<AddTaskDia> {
-  Widget CheckBoxPrior(String priority, int checkInt) {
-    return Column(
-      children: <Widget>[
-        Text(priority),
-        CheckboxListTile(
-          
-          value: widget.checkList[checkInt],
-          onChanged: (bool check) {
-            setState(() {
-              int i = 0;
-              for (i = 0; i == 2; i++) {
-                print("wtf!");
-                widget.checkList[i] = false;
-                CheckBoxPrior("Middle", 1);
-              }
-              widget.checkList[checkInt] = check;
-            });
-          },
-        )
-      ],
-    );
-  }
+  bool valMonday = false;
+  bool valTuesday = false;
+  bool valWednesday = false;
+  DateTimePickerTheme _pickerTheme = DateTimePickerTheme(
+    backgroundColor: Colors.white,
+    itemTextStyle: TextStyle(color: Colors.black),
+    showTitle: false,
+  );
+          DateTime today = DateTime.now();
+
+  
 
   @override
   Widget build(BuildContext context) {
     bool filledB = false;
     Size screensize = MediaQuery.of(context).size;
 
-    // TODO: implement build
     return AlertDialog(
       title: Text("Add Task"),
       content: SingleChildScrollView(
-              child: Container(
-          height: screensize.height / 1.2,
-          width: screensize.width / 1.2,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: Container(
+        height: screensize.height / 1.2,
+        width: screensize.width / 1.2,
+        child: ListView(
             children: <Widget>[
               Align(
                 child: Card(
@@ -81,6 +68,7 @@ class _AddTask extends State<AddTaskDia> {
                   ),
                 ),
               ),
+              SizedBox(height: 10,),
               Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
@@ -90,9 +78,7 @@ class _AddTask extends State<AddTaskDia> {
                   child: Container(
                     height: screensize.height / 5,
                     child: TextField(
-                      onChanged: (String value) {
-                       
-                      },
+                      onChanged: (String value) {},
                       decoration: InputDecoration(
                           filled: filledB,
                           border: InputBorder.none,
@@ -108,22 +94,96 @@ class _AddTask extends State<AddTaskDia> {
                   ),
                 ),
               ),
-              GestureDetector(
-                onTap: (){
-                  setState(() {
-                    print("ok");
-                  });
-                },
-                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Expanded(child:DropDownWid(screensize)),
-                    ]),
-              )
+             SizedBox(height: 10,),
+             Row(
+
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+
+              // [Monday] checkbox
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text("Important",style: TextStyle(fontSize: 10),),
+                  Checkbox(
+                    value: valMonday,
+                    onChanged: (bool value) {
+                      setState(() {
+                        valMonday = value;
+                        valTuesday = false;
+                        valWednesday = false;
+                      });
+                    },
+                  ),
+                ],
+              ),
+
+
+              // [Tuesday] checkbox
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text("Normal",style: TextStyle(fontSize: 10)),
+                  Checkbox(
+                    value: valTuesday,
+                    onChanged: (bool value) {
+                      setState(() {
+                        valTuesday = value;
+                        valMonday = false;
+                        valWednesday = false;
+                      });
+                    },
+                  ),
+                ],
+              ),
+
+
+              // [Wednesday] checkbox
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text("Optional",style: TextStyle(fontSize: 10)),
+                  Checkbox(
+                    value: valWednesday,
+                    onChanged: (bool value) {
+                      setState(() {
+                        valWednesday = value;
+                        valMonday = false;
+                        valTuesday = false;
+                      });
+                    },
+                  ),
+                ],
+              ),
             ],
           ),
-        ),
-      ),
+            Container(
+              margin: EdgeInsets.only(top: 10),
+              height: 120,
+              alignment: Alignment.topCenter,
+              child: DatePickerWidget(
+                onChange: (date, ints) {},
+                dateFormat: "dd-MM-yyyy",
+                initialDateTime: today,
+                minDateTime: today,
+                maxDateTime: DateTime(today.year, today.month + 1, 28),
+                pickerTheme: _pickerTheme,
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 10, left: 50, right: 50),
+              height: 120,
+              alignment: Alignment.topCenter,
+              child: TimePickerWidget(
+                onChange: (date, ints) {},
+                dateFormat: "HH-mm",
+                initDateTime: today,
+                minDateTime: DateTime(today.year, today.month + 1, 28, 0, 0),
+                maxDateTime: DateTime(today.year, today.month + 1, 28, 23, 59),
+                pickerTheme: _pickerTheme,
+              ),
+            ),]),
+      )),
     );
   }
 }
