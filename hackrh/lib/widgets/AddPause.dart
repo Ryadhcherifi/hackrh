@@ -261,7 +261,7 @@ class _AddPauseState extends State<AddPause> {
                 ),
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {Navigator.pop(context);},
                 child: Container(
                   height: 35,
                   width: screensize.width * (100 / 360),

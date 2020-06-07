@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import 'package:hackrh/widgets/AddTask.dart';
 import 'package:hackrh/widgets/AddTaskWidg.dart';
 import 'package:hackrh/widgets/Drawer.dart';
+import 'package:hackrh/widgets/TasksView.dart';
 
 class Taskpage extends StatelessWidget {
   @override
@@ -31,7 +32,6 @@ class Taskpage extends StatelessWidget {
         szagd = 20.0;
       }
     }
-    print(screensize);
     return Scaffold(
       drawer: CosDrawerWidget(),
         //backgroundColor: Colors.grey,
@@ -152,7 +152,6 @@ Widget taskbuilder(BuildContext context) {
   double sdecp = 16.0;
   double sprop = 10.0;
   double sdeli = 12.0;
-  print(screensize.height);
   if (screensize.height <= 600) {
     stask = 10.0;
     sdecp = 9.0;
@@ -174,52 +173,59 @@ Widget taskbuilder(BuildContext context) {
     }
   }
   return Material(
-      //onPressed:(){}
+      
       color: Color.fromRGBO(31, 118, 138, 1),
-      child: Container(
-        margin: EdgeInsets.only(top: 8, bottom: 8),
-        padding: EdgeInsets.all(16),
-        height: screensize.height / 7.0,
-        decoration: BoxDecoration(
-            //color: Colors.white,
-            color: Color.fromRGBO(88, 164, 181, 1),
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: <BoxShadow>[
-              BoxShadow(
-                  offset: Offset(0, 3), color: Colors.black12, blurRadius: 6)
-            ]),
-        child: Row(
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Task 1',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: stask,
-                        color: Colors.black)),
-                Spacer(),
-                Text('Description',
-                    style: TextStyle(fontSize: sdecp, color: Colors.grey[700])),
-                Spacer(),
-                Text('Priority : High',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: sprop,
-                        color: Colors.red)),
-              ],
-            ),
-            Spacer(),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Spacer(),
-                Spacer(),
-                Text('Deadline 12/07/2020 at 12:00',
-                    style: TextStyle(fontSize: sdeli, color: Colors.red)),
-              ],
-            )
-          ],
+      child: GestureDetector(onTap: (){
+        showDialog(context: context,
+        child : Builder( builder :(BuildContext context){
+          return TasksView();
+        }));
+      },
+              child: Container(
+          margin: EdgeInsets.only(top: 8, bottom: 8),
+          padding: EdgeInsets.all(16),
+          height: screensize.height / 7.0,
+          decoration: BoxDecoration(
+              //color: Colors.white,
+              color: Color.fromRGBO(88, 164, 181, 1),
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                    offset: Offset(0, 3), color: Colors.black12, blurRadius: 6)
+              ]),
+          child: Row(
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Task 1',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: stask,
+                          color: Colors.black)),
+                  Spacer(),
+                  Text('Description',
+                      style: TextStyle(fontSize: sdecp, color: Colors.grey[700])),
+                  Spacer(),
+                  Text('Priority : High',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: sprop,
+                          color: Colors.red)),
+                ],
+              ),
+              Spacer(),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Spacer(),
+                  Spacer(),
+                  Text('Deadline 12/07/2020 at 12:00',
+                      style: TextStyle(fontSize: sdeli, color: Colors.red)),
+                ],
+              )
+            ],
+          ),
         ),
       ));
 }

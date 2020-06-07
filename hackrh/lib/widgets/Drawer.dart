@@ -24,6 +24,9 @@ class CosDrawerWidget extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 8.0),
                   child: GestureDetector(
+                    onTap: (){
+                      Navigator.pushNamed(context, '/');
+                    },
                     child: Container(
                       alignment: Alignment.center,
                       height: screensize.height / 10,
@@ -44,6 +47,9 @@ class CosDrawerWidget extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 8.0),
                   child: GestureDetector(
+                    onTap: (){
+                      Navigator.pushNamed(context, '/Pause');
+                    },
                     child: Container(
                       alignment: Alignment.center,
                       height: screensize.height / 10,
